@@ -32,7 +32,7 @@
       <descriptions defaultDescription="Book Desc"/>
       <keyMapping columnObjectName="Projection_1" columnName="DESCRIPTION"/>
     </attribute>
-    <attribute id="AUTHOR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="AUTHOR" order="4" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Book Author"/>
       <keyMapping columnObjectName="Projection_1" columnName="AUTHOR"/>
     </attribute>
