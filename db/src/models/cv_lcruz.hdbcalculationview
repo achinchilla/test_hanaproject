@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="cv_lcruz" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="cv_lcruz"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="BOOKS">
+    <resourceUri>BOOKS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="BOOK_ID"/>
+      <viewAttribute id="BOOK_NAME"/>
+      <viewAttribute id="DESCRIPTION"/>
+      <viewAttribute id="AUTHOR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="BOOKS"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="BOOK_NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Book Name"/>
+      <keyMapping columnObjectName="Projection_1" columnName="BOOK_NAME"/>
+    </attribute>
+    <attribute id="DESCRIPTION" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Book Desc"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DESCRIPTION"/>
+    </attribute>
+    <attribute id="AUTHOR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Book Author"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AUTHOR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="BOOK_ID" order="1" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Book ID"/>
+      <measureMapping columnObjectName="Projection_1" columnName="BOOK_ID"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="90" y="223"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
